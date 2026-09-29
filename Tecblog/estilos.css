@@ -1,0 +1,201 @@
+/* Limpeza de margens e fontes padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+/* ================= HEADER / NAVEGAÇÃO ================= */
+#cabecalho {
+    background-color: #f7b600;
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+#cabecalho .logo h1 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+#cabecalho .logo span {
+    color: #ffffff;
+}
+
+#navegacao {
+    margin-top: 15px;
+}
+
+#navegacao a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+/* Item ativo (aba branca) */
+#navegacao a.ativo {
+    background-color: #ffffff;
+    color: #e09b00;
+}
+
+#navegacao a:hover:not(.ativo) {
+    text-decoration: underline;
+}
+
+/* ================= CONTEÚDO PRINCIPAL ================= */
+#conteudo-principal {
+    max-width: 960px;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* ================= ÁREA DE POSTS (ESQUERDA) ================= */
+#area-postagens {
+    flex: 2.5;
+}
+
+.postagem {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.postagem h2 {
+    color: #e09b00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.postagem .data-postagem {
+    display: block;
+    color: #555555;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+}
+
+.postagem img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.postagem p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+.link-leia-mais {
+    display: inline-block;
+    color: #e09b00;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: bold;
+}
+
+.link-leia-mais:hover {
+    text-decoration: underline;
+}
+
+/* ================= BARRA LATERAL (DIREITA) ================= */
+#barra-lateral {
+    flex: 1;
+}
+
+.card-lateral {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-lateral h3 {
+    background-color: #cccccc;
+    color: #444444;
+    padding: 10px 15px;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.card-lateral .conteudo-card {
+    padding: 15px;
+}
+
+.item-recente {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+}
+
+.item-recente:first-child {
+    border-bottom: 1px dotted #ccc;
+}
+
+.item-recente p {
+    font-size: 0.85rem;
+    color: #444444;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.lista-categorias {
+    list-style: none;
+}
+
+.lista-categorias li {
+    margin-bottom: 6px;
+}
+
+.lista-categorias li a {
+    color: #e09b00;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.lista-categorias li a:hover {
+    text-decoration: underline;
+}
+
+/* ================= RODAPÉ ================= */
+#rodape {
+    max-width: 960px;
+    margin: 0 auto 30px auto;
+    background-color: #cccccc;
+    text-align: center;
+    padding: 14px;
+}
+
+#rodape p {
+    font-size: 0.9rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+    #conteudo-principal {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    #rodape {
+        margin: 0 15px 30px 15px;
+    }
+}
