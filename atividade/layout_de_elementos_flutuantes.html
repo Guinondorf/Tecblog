@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de Elementos Flutuantes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 40px;
+        }
+
+        /* Container principal para centralizar e limitar a largura */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Estilo da grade simulando o comportamento de elementos flutuantes */
+        .row {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Estilo comum para cada coluna/card */
+        .coluna {
+            float: left;
+            width: 31.33%;
+            margin-right: 2.5%;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .coluna:last-child {
+            margin-right: 0;
+        }
+
+        /* Estilo específico para os blocos de texto cinza da primeira linha */
+        .card-cinza {
+            background-color: #e2e2e2;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .card-cinza h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #111;
+            line-height: 1.3;
+        }
+
+        .card-cinza p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .card-cinza a {
+            font-size: 13px;
+            color: #4a2c82;
+            text-decoration: underline;
+        }
+
+        /* Estilo para os blocos de imagem */
+        .card-imagem img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .card-imagem p {
+            font-size: 13px;
+            color: #333;
+            font-weight: normal;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .coluna {
+                width: 100%;
+                float: none;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Primeira Linha: Cards de Texto com Fundo Cinza -->
+        <div class="row">
+            <div class="coluna card-cinza">
+                <h2>Lorem ipsum dolor sit amet 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis iure ex, quo voluptatem optio magni molestiae harum assumenda natus. Qui, at? Voluptate, ex est? Iure sapiente vero iusto totam esse!</p>
+                <a href="#">Veja mais</a>
+            </div>
+
+            <div class="coluna card-cinza">
+                <h2>Lorem ipsum dolor sit amet 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis iure ex, quo voluptatem optio magni molestiae harum assumenda natus. Qui, at? Voluptate, ex est? Iure sapiente vero iusto totam esse!</p>
+                <a href="#">Veja mais</a>
+            </div>
+
+            <div class="coluna card-cinza">
+                <h2>Lorem ipsum dolor sit amet 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis iure ex, quo voluptatem optio magni molestiae harum assumenda natus. Qui, at? Voluptate, ex est? Iure sapiente vero iusto totam esse!</p>
+                <a href="#">Veja mais</a>
+            </div>
+        </div>
+
+        <!-- Segunda Linha: Cards com Imagens e Legenda 'Resumo' -->
+        <div class="row">
+            <div class="coluna card-imagem">
+                <img src="imagem/Lamborghini.jpg" alt="Imagem ilustrativa 1" onerror="this.src='https://placehold.co/400x300/ccc/333?text=Foto+1'">
+                <p>Resumo</p>
+            </div>
+
+            <div class="coluna card-imagem">
+                <img src="imagem/Lamborghini.jpg" alt="Imagem ilustrativa 2" onerror="this.src='https://placehold.co/400x300/ccc/333?text=Foto+2'">
+                <p>Resumo</p>
+            </div>
+
+            <div class="coluna card-imagem">
+                <img src="imagem/Lamborghini.jpg" alt="Imagem ilustrativa 3" onerror="this.src='https://placehold.co/400x300/ccc/333?text=Foto+3'">
+                <p>Resumo</p>
+            </div>
+        </div>
+
+        <!-- Terceira Linha: Cards com Imagens e Legenda 'Resumo' -->
+        <div class="row">
+            <div class="coluna card-imagem">
+                <img src="imagem/Lamborghini.jpg" alt="Imagem ilustrativa 4" onerror="this.src='https://placehold.co/400x300/ccc/333?text=Foto+4'">
+                <p>Resumo</p>
+            </div>
+
+            <div class="coluna card-imagem">
+                <img src="imagem/Lamborghini.jpg" alt="Imagem ilustrativa 5" onerror="this.src='https://placehold.co/400x300/ccc/333?text=Foto+5'">
+                <p>Resumo</p>
+            </div>
+
+            <!-- Mantendo o padrão de 3 colunas vazia/espaço para alinhar perfeitamente à imagem se necessário, ou completando com um card em branco/transparente -->
+            <div class="coluna" style="background: transparent; box-shadow: none; padding: 0;">
+                <!-- Espaço vazio mantido para respeitar a grade proporcional da terceira linha caso haja menos imagens -->
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sobrepondo Elementos</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .conteudo1 {
+            border: 1px solid red;
+            background: orange;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 2; /* contexto de empilhamento */
+        }
+        .conteudo2 {
+            border: 1px solid red;
+            background: green;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            z-index: 1; /* define a ordem de sobreposição */
+        }
+        .conteudo3 {
+            border: 1px solid red;
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            z-index: 0; /* define a ordem de sobreposição */
+        }
+    </style>
+</head>
+<body>
+    <div class="conteudo1">
+        Conteudo 1
+    </div>
+    <div class="conteudo2">
+        Conteudo 2
+    </div>
+    <div class="conteudo3">
+        Conteudo 3
+    </div>
+</body>
+</html>
